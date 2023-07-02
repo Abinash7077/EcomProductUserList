@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UserListView from "./components/UserListView";
+import ProductListView from "./components/ProductListView";
+import ProductDetailView from "./components/ProductDetailView";
+import Header from "./components/Header";
+import NewProductForm from "./components/NewProductForm";
 
-function App() {
+import UserEditView from "./components/UserEditView";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        {/* products start */}
+        <Route exact path="/products/new" element={<NewProductForm />} />
+        <Route exact path="/products/:id" element={<ProductDetailView />} />
+        <Route exact path="/products/:id" element={<ProductDetailView />} />
+        <Route
+          exact
+          path="/products/:id/edit"
+          element={<ProductDetailView />}
+        />
+        <Route exact path="/products" element={<ProductListView />} />
+        {/* products ends */}
+        {/* user route start */}
+        <Route exact path="/users" element={<UserListView />} />
+        <Route exact path="/users/:id/edit" element={<UserEditView />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
