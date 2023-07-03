@@ -28,14 +28,14 @@ const ProductDetailView = () => {
   }, [id]);
 
   const handleDelete = () => {
-    // Perform the API request to delete the product
+    
     fetch(`${API_URL}/${id}`, {
       method: "DELETE",
     })
       .then(() => {
         console.log("Product deleted");
 
-       navigate('/products')  // Redirect to the product list view
+       navigate('/products')  
         alert('Product deleted')
 
       })
@@ -50,29 +50,6 @@ const ProductDetailView = () => {
 
   return (
     <>
-      {/*  <Container>
-      <h1>Product Details</h1>
-
-      <p>
-        <strong>ID:</strong> {product.id}
-      </p>
-      <p>
-        <strong>Title:</strong> {product.title}
-      </p>
-      <p>
-        <strong>Category:</strong> {product.category}
-      </p>
-      <p>
-        <strong>Price:</strong> {product.price}
-      </p>
-
-      <Link to={`/products/${product.id}/edit`} className="btn btn-warning me-2">
-        Edit
-      </Link>
-      <Button variant="danger" onClick={handleDelete}>
-        Delete
-      </Button>
-    </Container> */}
       <Container className="detail_section">
         <div className="col-3 detail_card">
           <Card className="detail_card2" key={product.id}>

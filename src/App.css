@@ -204,5 +204,8 @@ li {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  box-shadow: 0 25px 40px gray;
+ /*  box-shadow: 0 25px 40px gray; */
+}
+.MainUserSection{
+  display: flex;
 }

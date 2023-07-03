@@ -90,10 +90,11 @@ const UserListView = () => {
   ];
 
   return (
-    <Container>
+    <Container fluid>
       <h1>User List</h1>
 
-      <Table striped bordered>
+<div className="MainUserSection row">
+      <Table className='col-6' striped bordered>
         <thead>
           <tr>
             <th>ID</th>
@@ -121,18 +122,9 @@ const UserListView = () => {
         </tbody>
       </Table>
 
-      <Container className="pagination_section">
-        <Pagination>
-          <Pagination.Prev onClick={handlePrevPage} disabled={currentPage === 1} />
-          {pageNumbers.map((pageNumber) => paginate(pageNumber))}
-          <Pagination.Next
-            onClick={handleNextPage}
-            disabled={currentPage === Math.ceil(users.length / usersPerPage)}
-          />
-        </Pagination>
-      </Container>
+      
 
-      <Container className="chart_section">
+      <Container className="chart_section col-6">
         <h2>Location wise User</h2>
         <PieChart className='pie' width={400} height={250}>
           <Pie data={pieChartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} fill="#8884d8">
@@ -143,6 +135,17 @@ const UserListView = () => {
           <Legend layout="vertical" align="right" verticalAlign="top" height={36} />
           <Tooltip />
         </PieChart>
+      </Container>
+      </div>
+      <Container className="pagination_section">
+        <Pagination>
+          <Pagination.Prev onClick={handlePrevPage} disabled={currentPage === 1} />
+          {pageNumbers.map((pageNumber) => paginate(pageNumber))}
+          <Pagination.Next
+            onClick={handleNextPage}
+            disabled={currentPage === Math.ceil(users.length / usersPerPage)}
+          />
+        </Pagination>
       </Container>
     </Container>
   );

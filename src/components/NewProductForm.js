@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { Form, Button,Container } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const NewProductForm = () => {
-    const navigate=useNavigate()
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
   const [previewImage, setPreviewImage] = useState("");
-
 
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
@@ -31,13 +30,13 @@ const NewProductForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const formData = new FormData();
     formData.append("title", title);
     formData.append("category", category);
     formData.append("price", price);
     formData.append("image", image);
-  
+
     try {
       const response = await fetch("https://fakestoreapi.com/products", {
         method: "POST",
@@ -46,12 +45,10 @@ const NewProductForm = () => {
           Accept: "application/json",
         },
       });
-  
+
       if (response.ok) {
-        // Product added successfully
-      navigate('/products')
+        navigate("/products");
       } else {
-        // Error adding product
         console.error("Error adding product");
       }
     } catch (error) {
@@ -94,7 +91,11 @@ const NewProductForm = () => {
           <Form.Label>Image</Form.Label>
           <Form.Control type="file" onChange={handleImageChange} />
           {previewImage && (
-            <img src={previewImage} alt="Preview" style={{ marginTop: 10, width: 200 }} />
+            <img
+              src={previewImage}
+              alt="Preview"
+              style={{ marginTop: 10, width: 200 }}
+            />
           )}
         </Form.Group>
         <Button variant="primary" type="submit">

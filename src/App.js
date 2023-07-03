@@ -12,8 +12,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <Header />
+     
       <Routes>
         {/* products start */}
+         <Route exact path="/" element={<ProductListView />} />
         <Route exact path="/products/new" element={<NewProductForm />} />
         <Route exact path="/products/:id" element={<ProductDetailView />} />
         <Route exact path="/products/:id" element={<ProductDetailView />} />
