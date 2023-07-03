@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams,useNavigate } from "react-router-dom";
 
 
-import { Container, Button, Card } from "react-bootstrap";
+import { Container, Button, Card,Form } from "react-bootstrap";
 
 const API_URL = "https://fakestoreapi.com/products";
 
@@ -47,6 +47,9 @@ const ProductDetailView = () => {
   if (!product) {
     return <div>Loading...</div>;
   }
+  /* comment  section*/
+
+
 
   return (
     <>
@@ -69,6 +72,11 @@ const ProductDetailView = () => {
             </Card.Body>
           </Card>
         </div>
+      </Container>
+      {/* comment section */}
+      <Container>
+  
+
       </Container>
     </>
   );

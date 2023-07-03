@@ -48,6 +48,7 @@ const NewProductForm = () => {
 
       if (response.ok) {
         navigate("/products");
+        console.log(response)
       } else {
         console.error("Error adding product");
       }

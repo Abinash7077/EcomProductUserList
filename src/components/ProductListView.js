@@ -26,7 +26,10 @@ const ProductListView = () => {
   useEffect(() => {
     const applyFilters = () => {
       const filtered = products.filter((product) => {
-        if (selectedCategory !== "All" && product.category !== selectedCategory) {
+        if (
+          selectedCategory !== "All" &&
+          product.category !== selectedCategory
+        ) {
           return false;
         }
 
@@ -125,7 +128,11 @@ const ProductListView = () => {
   };
 
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(filteredProducts.length / productsPerPage); i++) {
+  for (
+    let i = 1;
+    i <= Math.ceil(filteredProducts.length / productsPerPage);
+    i++
+  ) {
     pageNumbers.push(i);
   }
 
@@ -178,7 +185,9 @@ const ProductListView = () => {
                   <Card.Body>
                     <Card.Title>{item.title.substring(0, 25)}</Card.Title>
                     <Card.Text>${item.price}</Card.Text>
+                  </Card.Body>
 
+                  <div className="card-link">
                     <Link
                       to={`/products/${item.id}`}
                       className="btn btn-primary me-2"
@@ -197,15 +206,13 @@ const ProductListView = () => {
                     >
                       Delete
                     </Button>
-                  </Card.Body>
+                  </div>
                 </Card>
               </div>
             ))}
           </div>
         </div>
       </Container>
-
-    
 
       <Container className="pagination_section">
         <Pagination>
@@ -217,7 +224,8 @@ const ProductListView = () => {
           <Pagination.Next
             onClick={handleNextPage}
             disabled={
-              currentPage === Math.ceil(filteredProducts.length / productsPerPage)
+              currentPage ===
+              Math.ceil(filteredProducts.length / productsPerPage)
             }
           />
         </Pagination>

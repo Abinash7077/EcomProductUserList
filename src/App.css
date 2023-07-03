@@ -113,11 +113,11 @@ li {
   padding: 10px;
   width: 23%;
   min-height: 308px;
-  max-height: 210px;
+  
 
   text-align: center;
   font-weight: bold;
-  overflow: hidden;
+ /*  overflow: hidden; */
   margin-bottom: 100px;
 
   border: none !important;
@@ -128,7 +128,7 @@ li {
 
 .product_card:hover {
   z-index: 1000;
-  max-height: 400px;
+  /* max-height: 400px; */
   height: fit-content;
   transform: scale(1.15);
   position: relative;
@@ -144,6 +144,29 @@ li {
   margin: 0 auto;
   height: 220px;
   object-fit: contain;
+}
+.card-link{
+position: absolute;
+background-color: white;
+bottom: -20%;
+margin: 0;
+
+
+/* display: none; */
+
+width: 100%;
+}
+
+.product_card2:hover .card-link{
+  position: absolute;
+width: 100%;
+padding-top: 5px;
+padding-bottom: 5px;
+  bottom: -19%;
+  box-shadow: 0 25px 40px gray;
+  transform: scale(1.06);
+  z-index: 10000;
+
 }
 
 /* detailed view section */
