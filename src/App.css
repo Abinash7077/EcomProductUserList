@@ -197,9 +197,9 @@ li {
   display: flex;
 }
 .chart_section{
-  border: 2px solid gray;
+
   height: fit-content;
-  width: 50%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,4 +208,10 @@ li {
 }
 .MainUserSection{
   display: flex;
+ margin-bottom: 25px;
+  align-items: center;
+}
+.chart-col{
+
+width: 48%;
 }

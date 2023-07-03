@@ -94,7 +94,8 @@ const UserListView = () => {
       <h1>User List</h1>
 
 <div className="MainUserSection row">
-      <Table className='col-6' striped bordered>
+  <div className="col-6">
+      <Table  striped bordered>
         <thead>
           <tr>
             <th>ID</th>
@@ -121,10 +122,11 @@ const UserListView = () => {
           ))}
         </tbody>
       </Table>
+      </div>
 
-      
+      <div className="col-5 chart-col">
 
-      <Container className="chart_section col-6">
+      <Container fluid className="chart_section">
         <h2>Location wise User</h2>
         <PieChart className='pie' width={400} height={250}>
           <Pie data={pieChartData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} fill="#8884d8">
@@ -137,6 +139,7 @@ const UserListView = () => {
         </PieChart>
       </Container>
       </div>
+      </div>
       <Container className="pagination_section">
         <Pagination>
           <Pagination.Prev onClick={handlePrevPage} disabled={currentPage === 1} />
@@ -148,6 +151,7 @@ const UserListView = () => {
         </Pagination>
       </Container>
     </Container>
+    
   );
 };
 

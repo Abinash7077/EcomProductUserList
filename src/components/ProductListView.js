@@ -205,49 +205,7 @@ const ProductListView = () => {
         </div>
       </Container>
 
-      <Container>
-        <Table striped bordered>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentProducts.map((product) => (
-              <tr key={product.id}>
-                <td>{product.id}</td>
-                <td>{product.title}</td>
-                <td>{product.category}</td>
-                <td>{product.price}</td>
-                <td>
-                  <Link
-                    to={`/products/${product.id}`}
-                    className="btn btn-primary me-2"
-                  >
-                    View
-                  </Link>
-                  <Link
-                    to={`/products/${product.id}/edit`}
-                    className="btn btn-warning me-2"
-                  >
-                    Edit
-                  </Link>
-                  <Button
-                    variant="danger"
-                    onClick={() => handleDelete(product.id)}
-                  >
-                    Delete
-                  </Button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Container>
+    
 
       <Container className="pagination_section">
         <Pagination>
