@@ -151,8 +151,8 @@ background-color: white;
 bottom: -20%;
 margin: 0;
 
+display: none;
 
-/* display: none; */
 
 width: 100%;
 }
@@ -166,6 +166,7 @@ padding-bottom: 5px;
   box-shadow: 0 25px 40px gray;
   transform: scale(1.06);
   z-index: 10000;
+  display: inline-block;
 
 }
 
