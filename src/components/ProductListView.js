@@ -186,8 +186,11 @@ const ProductListView = () => {
                     <Card.Title>{item.title.substring(0, 25)}</Card.Title>
                     <Card.Text>${item.price}</Card.Text>
                   </Card.Body>
-
                   <div className="card-link">
+
+                 
+
+                  <div className="card-links">
                     <Link
                       to={`/products/${item.id}`}
                       className="btn btn-primary me-2"
@@ -206,6 +209,7 @@ const ProductListView = () => {
                     >
                       Delete
                     </Button>
+                  </div>
                   </div>
                 </Card>
               </div>
